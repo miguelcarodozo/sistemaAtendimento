@@ -291,9 +291,9 @@ void printTree(node* n){
         return;
     }
     if(n->color == 'r'){
-        printf("%d: RED\n",n->k);
+        printf("%d RED\n",n->k);
     }else{
-        printf("%d: BLACK\n", n->k);
+        printf("%d BLACK\n", n->k);
     }
     printTree(n->left);
     printTree(n->right);
@@ -306,7 +306,7 @@ int main() {
     int n;
     scanf("%d", &n);
     tree *t = CreateTree(n);
-    printTree(t->root);
+
     while(scanf("%d", &n) != EOF){
         if(n == -1){
             Delete(t, Minimum(t, t->root));
@@ -314,59 +314,9 @@ int main() {
         else{
             Insert(t, n);
         }
-        printTree(t->root);
-        printf("\n");
     }
-    /*tree *t = CreateTree(30);
-    printTree(t->root);
-    printf("\n");
 
-    Delete(t, Minimum(t, t->root));
     printTree(t->root);
-    printf("\n");
-
-    Insert(t, 41);
-    printTree(t->root);
-    printf("\n");
-
-    Insert(t, 17);
-    printTree(t->root);
-    printf("\n");
-
-    Insert(t, 34);
-    printTree(t->root);
-    printf("\n");
-
-    Insert(t, 43);
-    printTree(t->root);
-    printf("\n");
-
-    Delete(t, Minimum(t, t->root));
-    printTree(t->root);
-    printf("\n");
-
-    Insert(t, 24);
-    printTree(t->root);
-    printf("\n");
-
-    Insert(t, 25);
-    printTree(t->root);
-    printf("\n");
-
-    Insert(t, 49);
-    printTree(t->root);
-    printf("\n");
-
-    Insert(t, 32);
-    printTree(t->root);
-    printf("\n");
-
-    Insert(t, 36);
-    printTree(t->root);
-    printf("\n");
-
-    Delete(t, Minimum(t, t->root));
-    printTree(t->root);
-    printf("\n");*/
+    
     return 0;
 }
